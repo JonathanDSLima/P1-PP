@@ -3,16 +3,21 @@ package br.cesed.unifacisa.si.pp.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import br.cesed.unifacisa.si.pp.domains.Product;
 import br.cesed.unifacisa.si.pp.domains.dtos.ProductDTO;
 import br.cesed.unifacisa.si.pp.exceptions.ItemNotFoundException;
 import br.cesed.unifacisa.si.pp.repositories.ProductRepository;
 
+@Service
 public class ProductService {
 	
+	@Autowired
 	private ProductRepository productRepository;
 	
-	public List<ProductDTO> findAll() {
+	public List<ProductDTO> findAllproducts() {
 		return productRepository.findAll().stream()
 				.map(product -> 
 				toProductDTO(product))
