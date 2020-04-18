@@ -47,13 +47,13 @@ public class ProductService {
 		product.setImage(productDTO.getImage());
 		return productRepository.save(product);
 	}
-	
+
 	public void deleteProduct(long id) {
 		productRepository.deleteById(id);
 	}
 	
 	private ProductDTO toProductDTO(Product product) {
-		return new ProductDTO(product.getName(),product.getValue(), product.getImage());
+		return new ProductDTO(product.getId(),product.getName(),product.getValue(), product.getImage());
 	}
 
 }
