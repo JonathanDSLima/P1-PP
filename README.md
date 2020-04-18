@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Práticas de programação - React e Spring Boot
+=======
+# ClinicaEscola [WEB]
+>>>>>>> 83d3a9c12d83a0d6b7f42d6d9667fb03e48efbbd
 
 ### Descrição
 
@@ -55,3 +59,4 @@
 * Entre em contato comigo para possíveis melhorias, solicitações de trabalho e consultas.
 * Teste o aplicativo corretamente para uma melhor discussão de possíveis problemas e melhorias.
 * Caso seja desejado um contato profissional, segue o meu perfil do [Linkedin](https://www.linkedin.com/in/jonathan-lima-0a7852197/).
+
