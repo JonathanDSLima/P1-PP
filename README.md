@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Práticas de programação - React e Spring Boot
-=======
-# ClinicaEscola [WEB]
->>>>>>> 83d3a9c12d83a0d6b7f42d6d9667fb03e48efbbd
 
 ### Descrição
 
