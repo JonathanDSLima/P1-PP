@@ -1,0 +1,58 @@
+version: '3.6'
+
+# Definição dos services
+services:
+  # Back-end service
+  back-end:
+    build:
+      context: back-end
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - db 
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/restaurant_app
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root     
+    networks:
+      - backend
+      - frontend
+
+  # Front-end service
+  front-end:
+    build:
+      context: front-end
+      dockerfile: Dockerfile
+      environment:
+        REACT_APP_API_BASE_URL: http://localhost:8080
+    ports:
+      - "9090:80" 
+    depends_on:
+      - back-end
+    networks:
+      - frontend  
+
+  # Banco Service (Mysql)
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: restaurant_app
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend  
+  
+# Volumes
+volumes:
+  db-data:
+
+# Newtworks para facilitar a comunicação
+networks:
+  backend:
+  frontend:    
